@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .container{
+            display: flex;
+            flex-direction: row;
+        }
+        .container-flex{
+            width: 50%;
+            border:5px solid black;
+            height: 200px;
+        }
+    </style>
+    <title>Display Flex</title>
+</head>
+<body>
+<div class="container">
+    <div class="container-flex">
+
+    </div>
+    <div class="container-flex">
+        
+    </div>
+   
+</div>
+<button id="change-display">Change Display</button>
+<script>
+      document.getElementById('change-display').addEventListener('click', function () {
+            // Get the container element
+            var container = document.querySelector('.container');
+
+            // Toggle the flex direction between row and column
+            if (container.style.flexDirection === 'column') {
+                container.style.flexDirection = 'row';
+            } else {
+                container.style.flexDirection = 'column';
+            }
+        });
+    </script>
+</script>
+</body>
+</html>

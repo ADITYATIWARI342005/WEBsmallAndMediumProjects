@@ -1,0 +1,65 @@
+body {
+
+    background-color: #4b4949;
+  }
+  
+  
+  .head {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #ff3333;
+    top: 0;
+    left: 30px;
+  }
+
+  .left-arm,
+  .right-arm {
+    width: 70px;
+    height: 10px;
+    background-color: #ff3333;
+    top: 80px;
+  }
+  
+  .left-arm {
+    transform: rotate(-45deg);
+    left: 0;
+  }
+  
+  .right-arm {
+    transform: rotate(45deg);
+    right: 0;
+  }
+  
+  .left-leg,
+  .right-leg {
+    width: 70px;
+    height: 10px;
+    background-color: #ff3333;
+    top: 145px;
+  }
+  
+  .left-leg {
+    transform: rotate(-45deg);
+    left: 0;
+  }
+  
+  .right-leg {
+    transform: rotate(45deg);
+    right: 0;
+  }
+  
+  .word-display {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .guesses {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  input[type="text"] {
+
+  }
+  

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Diverse Gradient Squares</title>
+    <style>
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .gradient-square {
+            width: 400px;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+            border-radius: 10px;
+        }
+
+        .radial-gradient {
+            background-image: radial-gradient(circle, blue, green);
+        }
+        .radial-gradient-percentage {
+            background-image: radial-gradient(circle, blue 50%, green 50%);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="gradient-square radial-gradient">Radial</div>
+        <div class="gradient-square radial-gradient-percentage">Radial Percentage Wise</div>
+    </div>
+</body>
+</html>

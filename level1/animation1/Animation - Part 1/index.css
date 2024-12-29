@@ -1,0 +1,12 @@
+#animatedElement {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    position: relative;
+    animation: slideRight 2s forwards;
+}
+
+@keyframes slideRight {
+    from { left: 0; }
+    to { left: 100%; }
+}

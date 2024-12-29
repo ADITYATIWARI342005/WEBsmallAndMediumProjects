@@ -1,0 +1,13 @@
+#animatedElement {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    position: relative;
+    animation: slideRight 4s ease-in-out infinite alternate;
+  }
+
+  @keyframes slideRight {
+    0% { transform: translateX(0); }
+    50% { transform: scale(1.5) rotate(45deg); }
+    100% { transform: translateX(calc(100vw - 100px)); }
+  }

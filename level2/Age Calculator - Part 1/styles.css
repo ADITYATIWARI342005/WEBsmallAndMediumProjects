@@ -1,0 +1,94 @@
+
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set a beautiful background */
+body {
+    background: linear-gradient(to bottom, #f1c40f, #e67e22);
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Center the content */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* Style the header */
+h1 {
+    font-size: 48px;
+    color: #2c3e50;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 20px;
+}
+
+/* Style the form */
+.form {
+    background-color: #ffffff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    -webkit-border-radius:;
+    -moz-border-radius:;
+    -ms-border-radius:;
+    -o-border-radius:;
+}
+
+/* Style the label */
+label {
+    display: block;
+    font-size: 24px;
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+/* Style the input */
+input[type="date"] {
+    padding: 12px;
+    border: 2px solid #3498db;
+    border-radius: 5px;
+    font-size: 18px;
+    outline: none;
+    -webkit-border-radius:;
+    -moz-border-radius:;
+    -ms-border-radius:;
+    -o-border-radius:;
+}
+
+/* Style the button */
+#btn {
+    padding: 12px 24px;
+    background: linear-gradient(to bottom, #3498db, #2980b9);
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease;
+    -webkit-border-radius:;
+    -moz-border-radius:;
+    -ms-border-radius:;
+    -o-border-radius:;
+}
+
+#btn:hover {
+    transform: scale(1.05);
+}
+
+/* Style the result paragraph */
+#result {
+    font-size: 28px;
+    color: #27ae60;
+    margin-top: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}

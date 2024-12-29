@@ -1,0 +1,22 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.gradient-square {
+    width: 400px;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 20px;
+    border-radius: 10px;
+}
+
+.repeating-linear-gradient {
+    background-image: repeating-linear-gradient(to right, orange, orange 10px, brown 10px, brown 20px);
+}

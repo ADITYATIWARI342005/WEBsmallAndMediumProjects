@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Animation Test</title>
+    <style>
+      #animatedElement {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    position: relative;
+    animation: slideRight 2s forwards;
+}
+
+@keyframes slideRight {
+    from { left: 0%; }
+    to { left: 100%; }
+}
+
+    </style>
+</head>
+<body>
+    <div id="animatedElement">Move me!</div>
+</body>
+</html>
+
+
+

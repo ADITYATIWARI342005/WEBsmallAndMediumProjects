@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookshelf</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        .app {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            margin-left: 10px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #ddd;
+            padding: 10px;
+            margin: 10px 0;
+            position: relative;
+            cursor: pointer;
+        }
+
+        li.read {
+            background-color: green;
+        }
+
+        li .delete {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: red;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="app">
+        <h2>Bookshelf</h2>
+        <input type="text" id="bookName" placeholder="Enter book name">
+        <button onclick="addBook()">Add Book</button>
+        <ul id="bookList"></ul>
+    </div>
+    <script>
+        let books = loadBooksFromLocalStorage() || [];
+
+        function addBook() {
+            const bookName = document.getElementById('bookName').value;
+            if (bookName) {
+                books.push({ name: bookName, read: false });
+                renderBooks();
+                document.getElementById('bookName').value = '';
+                saveBooksToLocalStorage();
+            }
+        }
+
+        function toggleRead(index) {
+            books[index].read = !books[index].read;
+            renderBooks();
+            saveBooksToLocalStorage();
+        }
+
+        function deleteBook(index) {
+            books.splice(index, 1);
+            renderBooks();
+            saveBooksToLocalStorage();
+        }
+
+        function renderBooks() {
+            const bookList = document.getElementById('bookList');
+            bookList.innerHTML = '';
+            books.forEach((book, index) => {
+                const li = document.createElement('li');
+                li.innerHTML = `${book.name} <button class="delete" onclick="deleteBook(${index})">Delete</button>`;
+                li.className = book.read ? 'read' : '';
+                li.onclick = () => toggleRead(index);
+                bookList.appendChild(li);
+            });
+        }
+
+        function saveBooksToLocalStorage() {
+            localStorage.setItem('books', JSON.stringify(books));
+        }
+
+        function loadBooksFromLocalStorage() {
+            return JSON.parse(localStorage.getItem('books'));
+        }
+
+        renderBooks();
+    </script>
+</body>
+
+</html>
