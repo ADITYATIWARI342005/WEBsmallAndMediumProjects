@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BMI Calculator</title>
+  <style>
+    #bmiCalculator {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+    text-align: center;
+}
+
+input {
+    width: 90%;
+    margin: 10px 0;
+    padding: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: red;
+}
+
+#result {
+    margin-top: 20px;
+}
+
+  </style>
+</head>
+<body>
+    <div id="bmiCalculator">
+        <h2>BMI Calculator</h2>
+        <div class="weight-input">
+            <label for="weight">Weight (kg):</label>
+            <input type="number" id="weight" placeholder="Weight in kilograms">
+        </div>
+        <div class="height-input">
+            <label for="height">Height (cm):</label>
+            <input type="number" id="height" placeholder="Height in centimeters">
+        </div>
+        <button onclick="calculateBMI()">Calculate BMI</button>
+        <div id="result"></div>
+    </div>
+    <script>
+      function calculateBMI() {
+    var weight = document.getElementById('weight').value;
+    var height = document.getElementById('height').value;
+
+    height = height / 100; // convert height from cm to meters
+
+    var bmi = weight / (height * height); // BMI formula
+    bmi = bmi.toFixed(2); // round off to 2 decimal places
+
+    document.getElementById('result').innerHTML = `${bmi}`;
+}
+
+    </script>
+</body>
+</html>

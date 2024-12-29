@@ -1,0 +1,44 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #333; /* Dark background */
+    color: #fff; /* Light text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    border: 2px solid #444;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #222; /* Darker shade for container */
+}
+
+#count {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+#buttons button {
+    font-size: 1.2em;
+    color: #fff;
+    background-color: #555; /* Dark grey for buttons */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+#buttons button:hover {
+    background-color: #777; /* Lighter grey on hover */
+    transform: scale(1.1); /* Slight increase in size on hover */
+}
+
+#buttons button:active {
+    transform: scale(0.9); /* Slight decrease in size on click */
+}

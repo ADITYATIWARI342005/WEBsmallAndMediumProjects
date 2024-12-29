@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survery Form</title>
+</head>
+<body>
+    <h2>Sample Survey Form</h2>
+
+<form action="/submit-your-response">
+
+    <!-- Text Input -->
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" name="name"><br><br>
+
+    <!-- Textarea -->
+    <label for="feedback">Feedback:</label><br>
+    <textarea id="feedback" name="feedback" rows="4" cols="50"></textarea><br><br>
+
+    <!-- Radio Buttons -->
+    <label>Gender:</label><br>
+    <input type="radio" id="male" name="gender" value="male">
+    <label for="male">Male</label><br>
+    <input type="radio" id="female" name="gender" value="female">
+    <label for="female">Female</label><br><br>
+
+    <!-- Checkboxes -->
+    <label>Your Hobbies:</label><br>
+    <input type="checkbox" id="hobby1" name="hobby" value="Reading">
+    <label for="hobby1"> Reading</label><br>
+    <input type="checkbox" id="hobby2" name="hobby" value="Gardening">
+    <label for="hobby2"> Gardening</label><br>
+    <input type="checkbox" id="hobby3" name="hobby" value="Gaming">
+    <label for="hobby3"> Gaming</label><br><br>
+
+    <!-- Dropdown Menus -->
+    <label for="country">Country:</label><br>
+    <select id="country" name="country">
+        <option value="usa">United States</option>
+        <option value="uk">United Kingdom</option>
+        <option value="canada">Canada</option>
+        <option value="india">India</option>
+        <option value="australia">Australia</option>
+    </select><br><br>
+
+    <button id="submit-btn">Submit</button>
+</form>
+</body>
+</html>

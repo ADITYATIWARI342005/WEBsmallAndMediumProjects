@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triangle Area Calculator</title>
+    <style>
+       body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    margin: 20px;
+    background-color: pink;
+    color: #333;
+}
+
+form {
+    margin-top: 40px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+input {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid red;
+    border-radius: 4px;
+    width: 200px;
+}
+
+button {
+    background-color: green;
+    color: white;
+    padding: 10px 20px;
+    border:none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: blue;
+}
+
+#result {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: yellow;
+    border-radius: 4px;
+    color: black;
+    font-size: 18px;
+}
+
+label {
+    display: block;
+    margin-top: 20px;
+}
+
+    </style>
+</head>
+<body>
+    <h1>Triangle Area Calculator</h1>
+    
+    <form id="triangleForm">
+        <label for="sideA">Side A:</label>
+        <input type="number" id="sideA" required>
+        <br>
+        <label for="sideB">Side B:</label>
+        <input type="number" id="sideB" required>
+        <br>
+        <label for="sideC">Side C:</label>
+        <input type="number" id="sideC" required>
+        <br>
+        <button type="button" onclick="calculateArea()">Calculate Area</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+        function calculateArea() {
+            // Fetching the values of the sides from the input fields
+            var sideA = parseFloat(document.getElementById('sideA').value);
+            var sideB = parseFloat(document.getElementById('sideB').value);
+            var sideC = parseFloat(document.getElementById('sideC').value);
+
+            // Checking if the entered values form a valid triangle
+            if (sideA + sideB > sideC && sideA + sideC > sideB && sideB + sideC > sideA) {
+                // Calculating the semi-perimeter of the triangle
+                var s = (sideA + sideB + sideC) / 2;
+
+                // Calculating the area using Heron's formula
+                var area = Math.sqrt(s * (s - sideA) * (s - sideB) * (s - sideC));
+
+                // Displaying the result
+                document.getElementById('result').innerHTML =area.toFixed(2);
+            } else {
+                // Displaying an error message for invalid triangle
+                document.getElementById('result').innerHTML = "Invalid triangle. Please enter valid side lengths.";
+            }
+        }
+    </script>
+</body>
+</html>

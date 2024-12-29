@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Array Manipulation</title>
+  <style>
+   body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+  }
+  
+  .container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  .input-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  label {
+    margin-bottom: 10px;
+  }
+  
+  input {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+  }
+  
+  button {
+    margin-top: 10px;
+    padding: 8px 16px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .result-section {
+    text-align: center;
+  }
+  
+  </style>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Array Manipulation</h1>
+    <div class="input-section">
+      <label for="arrayInput">Enter an array of numbers:</label>
+      <input type="text" id="arrayInput" placeholder="e.g., 1, 2, 3, 4, 5">
+      <button onclick="filterPrimes()">Filter Prime Numbers</button>
+    </div>
+    <div class="result-section">
+      <p>Result: <span id="result"></span></p>
+    </div>
+  </div>
+  <script>
+    function isPrime(num) {
+      if (num <= 1) return false;
+      if (num <= 3) return true;
+      if (num % 2 === 0 || num % 3 === 0) return false;
+
+      let i = 5;
+      while (i * i <= num) {
+        if (num % i === 0 || num % (i + 2) === 0) return false;
+        i += 6;
+      }
+
+      return true;
+    }
+
+    function filterPrimes() {
+      const inputElement = document.getElementById('arrayInput');
+      const resultElement = document.getElementById('result');
+
+      const inputArray = inputElement.value
+        .split(',')
+        .map(item => parseInt(item.trim(), 10));
+
+      const primeNumbers = inputArray.filter(isPrime);
+
+      resultElement.textContent = `[${primeNumbers.join(', ')}]`;
+    }
+  </script>
+  <script src="index.js"></script>
+</body>
+</html>
